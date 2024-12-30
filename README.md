@@ -20,7 +20,7 @@ That's it! Your personal AI server is ready for usage. Try `POST /v1/ask` and `P
   <tr style="text-align:center">
     <td style="text-align:center"><b>MacOS Silicon</b></td>
     <td style="text-align:center">
-      <a href='https://github.com/explicit-logic/light-ai/raw/refs/heads/main/resources/bin/mac-silicon/light-ai'>
+      <a href='https://github.com/explicit-logic/light-ai/releases/download/v0.0.1/light-ai-mac-silicon' download="light-ai">
         <b>light-ai</b>
       </a>
     </td>
@@ -28,7 +28,7 @@ That's it! Your personal AI server is ready for usage. Try `POST /v1/ask` and `P
   <tr style="text-align:center">
     <td style="text-align:center"><b>MacOS Intel</b></td>
     <td style="text-align:center">
-      <a href='https://github.com/explicit-logic/light-ai/raw/refs/heads/main/resources/bin/mac-intel/light-ai'>
+      <a href='https://github.com/explicit-logic/light-ai/releases/download/v0.0.1/light-ai-mac-intel' download="light-ai">
         <b>light-ai</b>
       </a>
     </td>
@@ -36,7 +36,7 @@ That's it! Your personal AI server is ready for usage. Try `POST /v1/ask` and `P
   <tr style="text-align:center">
     <td style="text-align:center"><b>Linux</b></td>
     <td style="text-align:center">
-      <a href='https://github.com/explicit-logic/light-ai/raw/refs/heads/main/resources/bin/linux/light-ai'>
+      <a href='https://github.com/explicit-logic/light-ai/releases/download/v0.0.1/light-ai-linux' download="light-ai">
         <b>light-ai</b>
       </a>
     </td>
@@ -44,7 +44,7 @@ That's it! Your personal AI server is ready for usage. Try `POST /v1/ask` and `P
    <tr style="text-align:center">
     <td style="text-align:center"><b>Windows</b></td>
     <td style="text-align:center">
-      <a href='https://github.com/explicit-logic/light-ai/raw/refs/heads/main/resources/bin/win/light-ai.exe'>
+      <a href='https://github.com/explicit-logic/light-ai/releases/download/v0.0.1/light-ai-win.exe' download="light-ai.exe">
         <b>light-ai.exe</b>
       </a>
     </td>

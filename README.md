@@ -4,6 +4,16 @@ Easy to use single-file executable to run LLMs locally on your machine
 
 ![Demo](demo.gif)
 
+## Getting Started
+
+- **Download the right Light AI server for your operating system.**
+
+1. Run `./light-ai` (`./light-ai.exe` for Windows) from the command line.
+2. Open Swagger (`http://0.0.0.0:8000/swagger`) and pick `id` of one of the available models: `GET /v1/models`.
+3. Restart the server with the model `id` in params (For example: `./light-ai -m llama3.2-1b-instruct`).
+
+That's it! Your personal AI server is ready for usage. Try `POST /v1/ask` and `POST /v1/completion` to check.
+
 ## Download
 
 <table>

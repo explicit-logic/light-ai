@@ -2,7 +2,7 @@
   "name": "light-ai",
   "module": "./src/app.ts",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "scripts": {
     "dev": "bun --watch ./src/app.ts",
@@ -12,10 +12,10 @@
     "lint": "biome check --write --diagnostic-level=error ./src",
     "debug": "bun --inspect --watch ./src/app.ts",
     "compile": "bun ./scripts/compile.ts",
-    "compile:mac-silicon": "bun ./scripts/compile.ts -t mac-silicon",
-    "compile:mac-intel": "bun ./scripts/compile.ts -t mac-intel",
-    "compile:linux": "bun ./scripts/compile.ts -t linux",
-    "compile:win": "bun ./scripts/compile.ts -t win"
+    "compile:mac-silicon": "bun ./scripts/compile.ts -t bun-darwin-arm64",
+    "compile:mac-intel": "bun ./scripts/compile.ts -t bun-darwin-x64",
+    "compile:linux": "bun ./scripts/compile.ts -t bun-linux-x64-modern",
+    "compile:win": "bun ./scripts/compile.ts -t bun-windows-x64-modern"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",

@@ -14,16 +14,12 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest, macos-13]
         include:
           - os: ubuntu-latest
-            output_name: light-ai-linux
             target: bun-linux-x64-modern
           - os: windows-latest
-            output_name: light-ai-win.exe
             target: bun-windows-x64-modern
           - os: macos-latest
-            output_name: light-ai-mac-silicon
             target: bun-darwin-arm64
           - os: macos-13
-            output_name: light-ai-mac-intel
             target: bun-darwin-x64
 
     steps:
@@ -37,17 +33,15 @@ jobs:
       - name: Install dependencies
         run: bun install
 
-      - name: Build models
-        run: bun ./scripts/buildModels.ts
-
       - name: Build binary
-        run: bun build ./src/app.ts --target=${{ matrix.target }} --minify --compile --sourcemap --outfile ${{ matrix.output_name }}
+        run: bun ./scripts/compile.ts -t ${{ matrix.target }}
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ matrix.output_name }}
-          path: ${{ matrix.output_name }}
+          name: ${{ matrix.target }}
+          path: resources/bin/
+          if-no-files-found: error
 
   create_release:
     needs: build
@@ -65,12 +59,11 @@ jobs:
       - name: Download all artifacts
         uses: actions/download-artifact@v4
         with:
-          path: out
-          pattern: light-ai-*
+          path: resources/bin/
           merge-multiple: true
 
       - name: Display structure of downloaded files
-        run: ls -R out
+        run: ls -R resources/bin
 
       - name: Release v${{ env.VERSION }}
         uses: softprops/action-gh-release@v2
@@ -78,7 +71,7 @@ jobs:
           name: Release v${{ env.VERSION }}
           body: See the assets to download this version and install.
           files: |
-            out/*
+            resources/bin/*
           draft: true
           prerelease: false
           generate_release_notes: false

@@ -45,9 +45,7 @@ export async function download(url: string, done?: (tempFilePath: string) => voi
 
   const contentLength = response.headers.get('content-length');
   const total = Number.parseInt(contentLength || '0', 10);
-  progressBar.start(Math.round(total / 1024), 0, {
-    speed: 'N/A',
-  });
+  progressBar.start(Math.round(total / 1024), 0);
 
   let loaded = 0;
   const reader = body.getReader();
@@ -99,8 +97,7 @@ export async function download(url: string, done?: (tempFilePath: string) => voi
     }
     writer.end();
     progressBar.stop();
-    // console.clear();
-    clearLastLine();
+    console.clear();
 
     if (downloadSignal.stop) {
       fs.unlinkSync(tempFilePath);
@@ -120,9 +117,4 @@ export async function download(url: string, done?: (tempFilePath: string) => voi
     start,
     stop,
   };
-}
-
-function clearLastLine() {
-  process.stdout.moveCursor(0, -1); // up one line
-  process.stdout.clearLine(1); // from cursor to end
 }

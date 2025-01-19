@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "bun --watch ./src/app.ts",
-    "build": "bun build ./src/app.ts",
+    "build": "bun ./scripts/build.ts",
     "start": "NODE_ENV=production bun ./src/app.ts",
     "test": "bun test ./src/app.test.ts",
     "lint": "biome check --write --diagnostic-level=error ./src",
